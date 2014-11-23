@@ -31,7 +31,7 @@ public class Main extends JavaPlugin {
 		player.sendMessage("§6PIRATE WARS §cAHOY!");
 		player.sendMessage("§c+---------------------+");
 		player.sendMessage("§cRight click a Join sign to join the game!");
-		player.sendMessage("§a/pw setup §6| §cDisplays this list");
+		player.sendMessage("§a/pw help §6| §cDisplays this list");
 		player.sendMessage("§a/pw join §6| §cJoin the game manually");
 		player.sendMessage("§c+---------------------+");
 		player.sendMessage("§e§cPirateWars coded by jimis_321 and Minecone66");
