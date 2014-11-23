@@ -27,6 +27,8 @@ public class Main extends JavaPlugin {
 		player.sendMessage("§a/pw createarena §6| §cPuts you in arena setup mode");
 		player.sendMessage("§c+---------------------+");
 		player.sendMessage("§e§cPirateWars coded by jimis_321 and Minecone66");
+		
+		//IF THE PLAYER DOES NOT HAVE THE PERMISSION TO CREATE ARENAS
 		if(!player.hasPermission("piratewars.setup"));
 		player.sendMessage("§6PIRATE WARS §cAHOY!");
 		player.sendMessage("§c+---------------------+");
