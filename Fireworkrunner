@@ -1,0 +1,34 @@
+ getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+    
+    @Override
+    public void run() {
+     if(b.get(p.getName()) == true){
+     if( p.isSneaking()){
+      
+      if(p.getLocation().getY() < 40){
+      p.setVelocity(new Vector(0, 1, 0));
+
+      // Get firework builder
+      FireworkEffect.Builder builder = FireworkEffect.builder();
+       
+      // Create a firework effect with the builder
+      FireworkEffect effec = builder.flicker(false).trail(true).with(FireworkEffect.Type.BURST).withColor(Color.WHITE).withColor(Color.WHITE).withColor(Color.WHITE).build();
+       
+      // Spawn our firework
+      CustomEntityFirework.spawn(p.getLocation(), effec);
+      }else {
+       
+       // Get firework builder
+       FireworkEffect.Builder builder = FireworkEffect.builder();
+        
+       // Create a firework effect with the builder
+       FireworkEffect effec = builder.flicker(false).trail(true).with(FireworkEffect.Type.BALL_LARGE).withColor(Color.PURPLE).withColor(Color.WHITE).withColor(Color.BLACK).build();
+        
+       // Spawn our firework
+       CustomEntityFirework.spawn(p.getLocation(), effec);
+         b.put(p.getName(), false);
+      }
+     }
+    }
+    }
+   }, 0, 4);
