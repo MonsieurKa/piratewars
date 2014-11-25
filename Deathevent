@@ -1,0 +1,33 @@
+package Piratewars;
+
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.Sound;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+public class Deathevent implements Listener{
+	
+    @EventHandler
+   public void onDeath(PlayerDeathEvent e) {
+      Player player = e.getEntity();
+      player.getInventory().removeItem(new ItemStack(Material.GOLD_NUGGET, 2));
+      player.sendMessage("§cR.I.P §8> §cYou died, §4-2 Coins!");
+      player.playSound(player.getLocation(), Sound.WITHER_HURT, 5, 5);
+    }
+    @EventHandler
+    public void onRespawn(PlayerRespawnEvent e) {
+    	ItemStack w = new ItemStack(Material.NETHER_STAR);
+		ItemMeta wMeta = w.getItemMeta();
+
+		wMeta.setDisplayName(ChatColor.GREEN + "PirateWars Gadget Shop §6(Right click)");
+		w.setItemMeta(wMeta);
+
+		e.getPlayer().getInventory().addItem(w);
+    }
+}
